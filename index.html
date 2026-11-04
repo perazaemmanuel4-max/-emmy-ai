@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110b">
+  <meta name="description" content="EMMY AI — tu asistente inteligente.">
+  <title>EMMY AI</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="mark">E</div><div><strong>EMMY AI</strong><small>Tu inteligencia. Tu tecnología.</small></div></div>
+      <span class="status"><i></i> Prototipo v1</span>
+    </header>
+    <section class="intro">
+      <p class="eyebrow">ASISTENTE INTELIGENTE</p>
+      <h1>¿Qué vamos a <span>crear</span> hoy?</h1>
+      <p class="sub">Pregunta, aprende, programa y convierte tus ideas en proyectos.</p>
+    </section>
+    <section class="chat-card" aria-label="Chat con EMMY AI">
+      <div id="messages" class="messages" aria-live="polite">
+        <article class="bubble assistant"><b>EMMY AI</b><p>¡Hola! Soy EMMY AI. Estoy lista para ayudarte. ¿Qué tienes en mente?</p></article>
+      </div>
+      <div class="composer">
+        <textarea id="prompt" rows="2" maxlength="6000" placeholder="Escribe tu mensaje..." aria-label="Escribe tu mensaje"></textarea>
+        <button id="send" type="button" aria-label="Enviar mensaje"><span>Enviar</span> ➤</button>
+      </div>
+      <div class="foot"><span id="status">Conecta con el asistente para comenzar.</span><span>Evita compartir datos sensibles.</span></div>
+    </section>
+    <footer>EMMY AI · Proyecto independiente · Versión experimental</footer>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+    }
+  </script>
+</body>
+</html>
